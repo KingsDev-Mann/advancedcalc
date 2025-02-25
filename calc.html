@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  	
+    <link rel="icon" type="image/x-icon" href="image/zfold.png">
+
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+		max-width: 100%;
+	}
+	#calchead{
+		display: flex;
+		justify-content: space-between;
+		background: lavender;
+	}
+	#calchead h3{
+		float: left;
+	}
+	#calcbdy{
+		height: auto;
+		margin-top: 20px;
+		background: lavender;
+		padding: 15px;
+		scale: .6;
+	}
+	#maindisply{
+		width: 100%;
+		height: 90px;
+		background:lavender;
+		color: black;
+		font-size: 50px;
+		outline: none;
+		border: none;
+		text-align: right;
+	}
+	#subhd{
+		display: flex;
+		justify-content: space-around;
+	}
+	#subhd h3{
+		font-weight: bolder;
+		width: 6%;
+	}
+	#subhd .fas fa-university{
+		height: 50px;
+	}
+	#synthaxbtn{
+		display: flex;
+		justify-content: space-between;
+		background: lavender;
+	}
+	#synthaxbtn button{
+		height: 50px;
+		width: 100%;
+		outline: none;
+		border: none;
+		background: lavender;
+
+
+	}
+	form{
+		width: 100%;
+	
+		
+	}
+	form #arithmetics{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	form #arithmetics input{
+		height: 70px;
+		width: 100%;
+		border: none;
+		transform: translate(0.95px);
+	}
+	form #arithmetics input:hover{
+		background: dimgrey;
+		color: white;
+
+
+	}
+
+form #arithmetics input:active{
+	scale: 0.9;
+}
+
+
+
+
+	form #arithmetics #equals{
+		color: white;
+		background: navy;
+	}
+	 #subhd #onbutt{
+	 	height: 30px;
+	 	width: 100px;
+	 	border-radius: 10px;
+	 }
+	 #subhd #onbutt:hover{
+	 	background: navy;
+	 	color: white;
+	 	box-shadow: 0px 5px 5px 1px lightblue;
+	 }
+
+
+</style>
+
+<body>
+	<div class="container" id="calcbdy">
+
+		<div id="calchead" class="container-fluid">
+			<h3>Calculator</h3>
+
+		</div><br>
+		<form class="container-fluid">
+		<div id="subhd" class="container-fluid">
+			<h3><hr><hr><hr> </h3> <h2 class="pt-3">Standard</h2> <i class="fas fa-university pt-3"></i> <input id="onbutt" type="button" name=""onclick="display.value ='' " value="ON/Reset">
+		</div>
+
+		<br>
+		
+
+		<input type="text" name="display" value="" id="maindisply"> 
+		<br><br>
+
+
+
+
+
+
+		<div id="synthaxbtn" class="container-fluid">
+		<button>MC</button>
+		<button>MR</button>
+		<button>M+</button>
+		<button>M-</button>
+		<button>MS</button>
+		<button>M^</button>
+	</div>
+	<br>
+
+	
+		<div id="arithmetics">
+
+		<input type="button" name="" value="%" onclick="display.value +='%'">
+		<input type="button" name="" value="CE">
+		<input type="button" name="" value="C">
+		<input type="button" value="DEL" onclick="display.value =display.value.toString().slice(0, -1)  " name="">
+	</div>
+	
+
+	<div id="arithmetics">
+		<input type="button" name="" value="1/x">
+		<input type="button" name="" value="x2">
+		<input type="button" name="" value="SQRT">
+		<input type="button" value="DIVISION" onclick="display.value +='/'" name="">
+	</div>
+
+		
+		<div id="arithmetics">
+
+		<input type="button" value="7" onclick="display.value +='7'" name="">
+		<input type="button" value="8" onclick="display.value +='8'" name="">
+		<input type="button" value="9" onclick="display.value +='9'" name="">
+		<input type="button" value="&times;" onclick="display.value +='*'" name="">
+	</div>
+		
+		<div id="arithmetics">
+
+		<input type="button"  value="4" onclick="display.value +='4'" name="">
+		<input type="button" value="5" onclick="display.value +='5'" name=""> 
+	<input type="button" value="6" onclick="display.value +='6'" name="">
+	<input type="button" name="" value="-">
+	</div>
+	
+		<div id="arithmetics">
+
+		<input type="button" value="1"  onclick="display.value +='1'" name="">
+		<input type="button" value="2" onclick="display.value +='2'" name="">
+<input type="button" value="3" onclick="display.value +='3'" name="">
+<input type="button"  value="+" onclick="display.value  += '+'" name="">
+
+	</div>
+		
+		<div id="arithmetics">
+
+		<input type="button" name="" value="+/-">
+		<input type="button" value="0" onclick="display.value +='0'" name="">
+		<input type="button" value="." onclick="display.value+='.'" name="">
+		<input type="button" value="=" onclick="display.value= eval(display.value)"name="">
+	</div>
+	
+
+		<br>
+
+
+	</form>
+
+	</div>
+	
+
+</body>
+</html>
